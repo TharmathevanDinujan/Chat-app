@@ -1,2 +1,2 @@
-# Chat-bot
+# Chat-app
 Dinujan
