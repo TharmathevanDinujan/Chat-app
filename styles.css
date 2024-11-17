@@ -1,0 +1,206 @@
+/* Background styling */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #89fffd, #ef32d9);
+}
+
+.chat-container {
+  width: 90%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Login and Sign Out buttons */
+.login-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #e3f2fd;
+}
+
+.login-container button {
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.login-container button:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+
+.login-container button:active {
+  transform: scale(0.95);
+}
+
+/* Chat Box styling */
+.chat-box {
+  height: 400px;
+  overflow-y: auto;
+  padding: 15px;
+  background-color: #e1f5fe;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: #fff;
+  animation: fadeIn 0.5s ease-in;
+  position: relative;
+}
+
+.message.sent {
+  background-color: #4caf50;
+  align-self: flex-end;
+}
+
+.message.received {
+  background-color: #1e88e5;
+  align-self: flex-start;
+}
+
+/* Timestamp styling */
+.timestamp {
+  font-size: 0.8em;
+  color: #00000000;
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+}
+
+/* Username container styling */
+.username-container {
+  display: flex;
+  padding: 10px;
+  background-color: #e3f2fd;
+}
+
+.username-container input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.username-container button {
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+/* Button animations */
+.username-container button:hover,
+.input-container button:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+
+.username-container button:active,
+.input-container button:active {
+  transform: scale(0.95);
+}
+
+/* Message input container */
+.input-container {
+  display: flex;
+  padding: 10px;
+  background-color: #e3f2fd;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+button {
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+/* Floating background circles */
+.background-animation .circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: float 6s ease-in-out infinite;
+}
+
+.background-animation .circle:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 20%;
+  animation-duration: 7s;
+}
+
+.background-animation .circle:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 70%;
+  animation-duration: 9s;
+}
+
+.background-animation .circle:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  top: 80%;
+  left: 40%;
+  animation-duration: 5s;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0) rotate(0deg);
+  }
+  50% {
+      transform: translateY(-20px) rotate(180deg);
+  }
+  100% {
+      transform: translateY(0) rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
