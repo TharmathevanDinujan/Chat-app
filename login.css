@@ -1,0 +1,185 @@
+/* General body styles */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #89fffd, #ef32d9);
+  animation: background-slide 6s infinite alternate;
+}
+
+/* Login container styles */
+.login-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  animation: none; /* Removed animation from container */
+  position: absolute; /* Ensure it's centered immediately */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Input styles */
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: box-shadow 0.3s, transform 0.3s; /* Smooth animation */
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(149, 207, 190, 0.8);
+  animation: focus-pulse 0.6s ease-in-out;
+}
+
+/* Animation for text fields on focus */
+@keyframes focus-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(149, 207, 190, 0.8);
+  }
+  50% {
+    transform: scale(1.02); /* Slightly grow the input field */
+    box-shadow: 0 0 12px rgba(53, 122, 232, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(149, 207, 190, 0.8);
+  }
+}
+
+/* Button styles */
+button {
+  background-color: #95cfbe;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #357ae8;
+  transform: scale(1.05);
+}
+
+#google-signin-btn img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Button glow effect */
+.button-glow {
+  box-shadow: 0 4px 8px rgba(53, 122, 232, 0.5);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.button-glow:hover {
+  box-shadow: 0 6px 15px rgba(53, 122, 232, 0.7);
+}
+
+/* Fade-in animations */
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1.5s forwards;
+}
+
+.form-fade-in {
+  opacity: 0;
+  animation: fade-in 2s forwards;
+}
+
+.or-fade-in {
+  opacity: 0;
+  animation: fade-in 2.5s forwards;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes background-slide {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f44336;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: none; /* Initially hidden */
+  animation: slide-in 0.5s ease-out, fade-out 3s 4s ease-out; /* Animation for showing and fading out */
+}
+
+/* Slide-in effect */
+@keyframes slide-in {
+  from {
+    transform: translateX(-50%) translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Fade-out effect after a delay */
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
