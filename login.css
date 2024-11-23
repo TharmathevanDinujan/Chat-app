@@ -6,7 +6,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #89fffd, #ef32d9);
+  background: linear-gradient(135deg, #4f9a99, #ef32d9);
   animation: background-slide 6s infinite alternate;
 }
 
