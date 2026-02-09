@@ -1,0 +1,355 @@
+/* Global Styles merged from login.css and styles.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  /* overflow: hidden;  Removing overflow hidden to allow scrolling if needed, or keep it if strictly single screen */
+  background: linear-gradient(135deg, #89fffd, #ef32d9);
+  animation: background-slide 6s infinite alternate;
+}
+
+@keyframes background-slide {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+/* Login/Signup Container */
+.login-container,
+.signup-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  /* position: absolute;  Flexbox on body handles centering */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  width: 90%;
+  max-width: 400px;
+  animation: slide-in 1s ease-in-out;
+}
+
+/* Chat Container */
+.chat-container {
+  width: 130%;
+  max-width: 1400px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(34, 9, 180, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animations */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1.5s forwards;
+}
+
+.form-fade-in {
+  opacity: 0;
+  animation: fade-in 2s forwards;
+}
+
+.or-fade-in {
+  opacity: 0;
+  animation: fade-in 2.5s forwards;
+}
+
+/* Inputs & Buttons */
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  /* Important for width: 100% */
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(149, 207, 190, 0.8);
+  animation: focus-pulse 0.6s ease-in-out;
+}
+
+@keyframes focus-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(149, 207, 190, 0.8);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(53, 122, 232, 0.8);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(149, 207, 190, 0.8);
+  }
+}
+
+button {
+  background-color: #95cfbe;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+  width: 100%;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+button:hover {
+  background-color: #357ae8;
+  transform: scale(1.05);
+}
+
+.button-glow {
+  box-shadow: 0 4px 8px rgba(53, 122, 232, 0.5);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.button-glow:hover {
+  box-shadow: 0 6px 15px rgba(53, 122, 232, 0.7);
+}
+
+/* Chat Specifics */
+.username-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #8800ff;
+  color: #000000;
+  align-items: center;
+  font-weight: bolder;
+}
+
+.username-container input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  width: auto;
+  /* Override width 100% */
+  margin: 0;
+}
+
+.username-container button {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: auto;
+  margin: 0;
+}
+
+.chat-box {
+  height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+  background: #e3f2fd;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 1s ease-out;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 12px;
+  position: relative;
+  max-width: 80%;
+  animation: slideIn 0.5s ease-out;
+  word-wrap: break-word;
+}
+
+.message.sent {
+  background: #4caf50;
+  align-self: flex-end;
+  color: white;
+}
+
+.message.received {
+  background: #2196f3;
+  align-self: flex-start;
+  color: white;
+}
+
+.message .timestamp {
+  font-size: 0.7em;
+  opacity: 0.7;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.input-container {
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+  background: #bbdefb;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: auto;
+  margin: 0;
+}
+
+.input-container button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: auto;
+  margin: 0;
+}
+
+/* Background Animation Elements */
+.background-animation .circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: float 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+.background-animation .circle:nth-child(1) {
+  width: 120px;
+  height: 120px;
+  top: 10%;
+  left: 15%;
+  animation-duration: 8s;
+}
+
+.background-animation .circle:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 70%;
+  animation-duration: 12s;
+}
+
+.background-animation .circle:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  top: 75%;
+  left: 40%;
+  animation-duration: 10s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+  /* Fixed keyframe */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Gender Container (from signup) */
+.gender-container {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  animation: fade-in 2.5s forwards;
+}
+
+.gender-label {
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.gender-label input {
+  margin-right: 5px;
+  width: auto;
+  margin: 0 5px 0 0;
+}
