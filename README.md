@@ -49,8 +49,8 @@ Follow these steps to set up the project locally.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/chatapp-new.git
-    cd chatapp-new
+    git clone https://github.com/TharmathevanDinujan/Chat-app
+    cd chatapp
     ```
 
 2.  **Install dependencies:**
@@ -82,12 +82,15 @@ Follow these steps to set up the project locally.
 
 ## 📦 Deployment
 
-This project is optimized for deployment on [Vercel](https://vercel.com/).
+This project is ready for deployment on [Netlify](https://www.netlify.com/).
 
 1.  Push your code to a Git repository (GitHub, GitLab, Bitbucket).
-2.  Import the project into Vercel.
-3.  Add the **Environment Variables** from your `.env.local` file to the Vercel project settings.
-4.  Deploy! 🚀
+2.  Log in to Netlify and click **"Add new site"** > **"Import an existing project"**.
+3.  Select your repository.
+4.  In the **"Build & Deploy"** settings, Netlify should automatically detect Next.js.
+5.  Click **"Deploy site"**.
+6.  Once the site is created, go to **"Site configuration"** > **"Environment variables"** and add the variables from your `.env.local` file.
+7.  Trigger a new deploy if needed! 🚀
 
 ---
 
