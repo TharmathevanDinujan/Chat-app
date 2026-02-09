@@ -7,6 +7,8 @@
 
 A modern, real-time chat application built for performance and responsiveness. Featuring seamless authentication and instant messaging powered by **Next.js 15** and **Firebase**.
 
+[**🔴 Live Demo**](https://chat-app-dinu.netlify.app/)
+
 ---
 
 ## ✨ Features
