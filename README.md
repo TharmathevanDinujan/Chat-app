@@ -26,7 +26,14 @@ A modern, real-time chat application built for performance and responsiveness. F
 
 ---
 
-## 🛠️ Tech Stack
+## � Screenshots
+
+| Login Page | Chat Interface |
+|:---:|:---:|
+| ![Login Page](public/scr1.png) | ![Chat Interface](public/scr2.png) |
+
+
+## �🛠️ Tech Stack
 
 - **Frontend Framework**: [Next.js 15](https://nextjs.org/) (App Router)
 - **Library**: [React 19](https://react.dev/)
