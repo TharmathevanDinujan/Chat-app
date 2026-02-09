@@ -121,4 +121,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by [D_I_N_U]
