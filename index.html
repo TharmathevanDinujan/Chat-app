@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DINU CHAT APP - Login</title>
+  <link rel="stylesheet" href="login.css">
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script defer src="login.js"></script>
+</head>
+<body>
+  <div class="login-container">
+    <!-- App Icon -->
+    <img src="app icon.png" alt="App Icon" class="app-icon">
+
+    <h2 class="fade-in">Welcome to Dinu Chat App</h2>
+
+    <!-- Email and Password Login Form -->
+    <form id="email-login-form" class="form-fade-in">
+      <input type="email" id="email" placeholder="Email" required >
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit" class="button-glow">Sign in with Email</button>
+    </form>
+
+    <p class="or-fade-in">OR</p>
+
+    <!-- Google Login Button -->
+    <button id="google-signin-btn" class="button-glow">
+      <img src="icons8-google-96.png" alt="Google Icon">
+      Sign in with Google
+    </button>
+
+    <p class="fade-in">Don't have an account? <a href="signup.html">Sign Up</a></p>
+  </div>
+
+  <!-- Notification Container -->
+  <div id="notification" class="notification">
+    <p id="notification-message"></p>
+  </div>
+</body>
+</html>

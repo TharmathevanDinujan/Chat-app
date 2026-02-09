@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DINU CHAT APP - Sign Up</title>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <style>
+    /* General body styles */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #89fffd, #ef32d9);
+      animation: background-slide 6s infinite alternate;
+    }
+
+    /* Sign-up container styles */
+    .signup-container {
+      text-align: center;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      animation: slide-in 1s ease-in-out;
+    }
+
+    /* Input styles */
+    input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: box-shadow 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 8px rgba(149, 207, 190, 0.8);
+    }
+
+    /* Button styles */
+    button {
+      background-color: #95cfbe;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 25px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #357ae8;
+      transform: scale(1.05);
+    }
+
+    /* Button glow effect */
+    .button-glow {
+      box-shadow: 0 4px 8px rgba(53, 122, 232, 0.5);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .button-glow:hover {
+      box-shadow: 0 6px 15px rgba(53, 122, 232, 0.7);
+    }
+
+    /* Gender radio styles */
+    .gender-container {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-around;
+      animation: fade-in 2.5s forwards;
+    }
+
+    .gender-label {
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .gender-label input {
+      margin-right: 5px;
+    }
+
+    .gender-label:hover {
+      color: #357ae8;
+      transform: scale(1.1);
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    /* Fade-in animations */
+    .fade-in {
+      opacity: 0;
+      animation: fade-in 1.5s forwards;
+    }
+
+    .form-fade-in {
+      opacity: 0;
+      animation: fade-in 2s forwards;
+    }
+
+    .or-fade-in {
+      opacity: 0;
+      animation: fade-in 2.5s forwards;
+    }
+
+    /* Animations */
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slide-in {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes background-slide {
+      from {
+        background-position: 0% 50%;
+      }
+      to {
+        background-position: 100% 50%;
+      }
+    }
+
+    /* Popup styles */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #95cfbe;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      animation: popup-animation 0.5s forwards;
+    }
+
+    /* Popup animation */
+    @keyframes popup-animation {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Add responsiveness */
+    @media (max-width: 768px) {
+      .login-container {
+        width: 90%;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container fade-in">
+    <h2>Create a New Account</h2>
+    <form id="signup-form">
+      <input 
+  type="text" 
+  id="signup-fullname" 
+  placeholder="Full Name" 
+  required 
+  class="form-fade-in" 
+  onfocus="this.placeholder = ''" 
+  onblur="this.placeholder = 'Full Name'">
+
+<input 
+  type="email" 
+  id="signup-email" 
+  placeholder="Email" 
+  required 
+  class="form-fade-in" 
+  onfocus="this.placeholder = ''" 
+  onblur="this.placeholder = 'Email'">
+
+<input 
+  type="password" 
+  id="signup-password" 
+  placeholder="Password" 
+  required 
+  class="form-fade-in" 
+  onfocus="this.placeholder = ''" 
+  onblur="this.placeholder = 'Password'">
+
+
+
+      <div class="gender-container">
+        <label class="gender-label">
+          <input type="radio" name="gender" value="male" required> Male
+        </label>
+        <label class="gender-label">
+          <input type="radio" name="gender" value="female" required> Female
+        </label>
+      </div>
+      <button 
+        type="submit" 
+        class="button-glow">
+        Sign Up
+      </button>
+    </form>
+    <p style="margin-top: 15px;" class="or-fade-in">Already have an account? <a href="index.html" style="color: #357ae8; text-decoration: none;">Log In</a></p>
+  </div>
+
+  <!-- Popup Notification -->
+  <div id="popup" class="popup">Registration successful! Please check your email to verify your account.</div>
+
+  <script>
+    // Firebase configuration (replace with your own Firebase config)
+    const firebaseConfig = {
+      apiKey: "AIzaSyDwPkk3G7O0ajVydw4toexCsapEx6bFSaU",
+      authDomain: "chat-app-83303.firebaseapp.com",
+      databaseURL: "https://chat-app-83303-default-rtdb.firebaseio.com",
+      projectId: "chat-app-83303",
+      storageBucket: "chat-app-83303.appspot.com",
+      messagingSenderId: "414327509570",
+      appId: "1:414327509570:web:02492875b0a4e6268e53db",
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Handle Sign-Up
+    document.getElementById("signup-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const fullName = document.getElementById("signup-fullname").value;
+      const email = document.getElementById("signup-email").value;
+      const password = document.getElementById("signup-password").value;
+      const gender = document.querySelector('input[name="gender"]:checked').value;
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          console.log("User registered successfully:", userCredential.user);
+          console.log("Full Name:", fullName, "Gender:", gender);
+          showPopup("Account created successfully! Please log in.");
+          window.location.href = "index.html"; // Redirect to login page
+        })
+        .catch((error) => {
+          console.error("Error during registration:", error);
+          showPopup("Registration failed. " + error.message);
+        });
+    });
+
+    // Show popup notification
+    function showPopup(message) {
+      const popup = document.getElementById('popup');
+      popup.textContent = message;
+      popup.style.display = 'block';
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 5000); // Hide after 5 seconds
+    }
+  </script>
+</body>
+</html>
